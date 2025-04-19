@@ -135,7 +135,7 @@ def upscale_roi(roi, scale):
 if __name__ == "__main__":
     video_path = 'test_vid3.mp4'
     model = StackedCNN()
-    model.load_state_dict(torch.load("final\BB3.pth", map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load("BB3.pth", map_location=torch.device('cpu')))
     model.eval()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)

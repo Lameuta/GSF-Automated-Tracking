@@ -546,7 +546,7 @@ def find_object_location_iterative(
             model.eval()
             full_region_prediction = model(full_region_tensor)
         dynamic_threshold = full_region_prediction.item()
-        if dynamic_threshold<=0.6:#hereee
+        if dynamic_threshold<=0.7:#hereee
             return None
         print(f"  Dynamic refinement threshold (score of full region): {dynamic_threshold:.4f}")
     except Exception as e:
@@ -734,7 +734,7 @@ def plot_sorted_grid(grid_stack, predictions, title="Sorted Grid 9"):
 if __name__ == "__main__":
     # --- Configuration ---
     IMAGE_PATH = "biden.jpg" # Replace with your image path
-    MODEL_PATH = "final\BB3.pth"   # Replace with your model path
+    MODEL_PATH = "BB3.pth"   # Replace with your model path
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     NUM_CELLS = 9       # Or 6, depending on model/strategy
     PROB_THRESHOLD = 0.7 # Adjust based on model performance
